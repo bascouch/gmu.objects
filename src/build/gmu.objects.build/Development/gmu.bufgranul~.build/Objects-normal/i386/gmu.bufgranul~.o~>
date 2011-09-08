@@ -1,0 +1,29 @@
+In file included from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.buffer.h:18,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.h:32,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:10:
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.utils.h:19:1: warning: "MIN" redefined
+In file included from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/../include/maxcpp5.h:46,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.h:27,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:10:
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/../../c74support/max-includes/ext_common.h:40:1: warning: this is the location of the previous definition
+In file included from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.buffer.h:18,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.h:32,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:10:
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.utils.h:20:1: warning: "MAX" redefined
+In file included from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/../include/maxcpp5.h:46,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.h:27,
+                 from /Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:10:
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/../../c74support/max-includes/ext_common.h:27:1: warning: this is the location of the previous definition
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.env.h:35: warning: 'class gmu_env' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.env.trap.h:17: warning: 'class gmu_env_trap' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.spat.h:21: warning: 'class gmu_spat' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.spat.dbap.h:28: warning: 'class gmu_spat_dbap' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.grain.h:16: warning: 'class gmu_grain' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgrain.h:16: warning: 'class gmu_bufgrain' has virtual functions but non-virtual destructor
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp: In member function 'void gmu_bufgranul::grain(long int, t_symbol*, long int, t_atom*)':
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:167: warning: unused variable 'j'
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:169: warning: unused variable 'xn'
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:189: warning: unused variable 'pan'
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~.cpp:190: warning: unused variable 'dist'
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.spat.utils.h: At global scope:
+/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.spat.utils.h:40: warning: 'common_spk_config' defined but not used
