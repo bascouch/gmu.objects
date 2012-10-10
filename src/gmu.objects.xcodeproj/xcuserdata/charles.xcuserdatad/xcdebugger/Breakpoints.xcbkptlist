@@ -191,11 +191,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gmu.bufgranul~.cpp"
-         timestampString = "337189765.406446"
+         timestampString = "337273800.870277"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "201"
-         endingLineNumber = "201"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
          landmarkName = "perform(int vs, t_sample ** inputs, t_sample ** outputs)"
          landmarkType = "7">
       </FileBreakpoint>
@@ -205,12 +205,54 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gmu.bufgranul~.cpp"
-         timestampString = "337188130.01344"
+         timestampString = "337273800.870277"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "192"
-         endingLineNumber = "192"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "perform(int vs, t_sample ** inputs, t_sample ** outputs)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "gmu.bufgranul~.cpp"
+         timestampString = "337275116.651683"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "451"
+         endingLineNumber = "451"
+         landmarkName = "perform_check_buffers()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "gmu.bufgranul~.cpp"
+         timestampString = "337273903.926099"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
+         landmarkName = "gmu_bufgranul(t_symbol * sym, long ac, t_atom * av)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "gmu.bufgranul~.cpp"
+         timestampString = "337275507.202709"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
+         landmarkName = "~gmu_bufgranul()"
          landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -36,10 +36,19 @@
       displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Development">
+      buildConfiguration = "Development"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <PathRunnable
-         FilePath = "/Applications/-Son/Max5/MaxMSP Runtime.app">
+         FilePath = "/Applications/Max6/Max Runtime.app">
       </PathRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = ""
+            isEnabled = "NO">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -47,11 +56,12 @@
       displayScaleIsEnabled = "NO"
       displayScale = "1.00"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = "/Developer/Platforms/MacOSX.platform/Developer/Library/Instruments/PlugIns/templates/Sudden Termination.tracetemplate"
+      savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Development">
+      buildConfiguration = "Development"
+      debugDocumentVersioning = "YES">
       <PathRunnable
-         FilePath = "/Applications/-Son/Max5/MaxMSP Runtime.app">
+         FilePath = "/Applications/Max6/Max Runtime.app">
       </PathRunnable>
    </ProfileAction>
    <AnalyzeAction

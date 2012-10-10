@@ -47,6 +47,7 @@ THE SOFTWARE.
 #include "commonsyms.h"
 #include "z_dsp.h"
 #include "buffer.h"
+#include "ext_critical.h"
 
 #include <new>
 

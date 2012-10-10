@@ -25,6 +25,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>gmu.bufgranul~ copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>gmu.bufgranul~.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -44,6 +49,11 @@
 			<true/>
 		</dict>
 		<key>3694742E0FD5C8DC00A5E9FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>565B4D37156BBF620061B72B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -30,6 +30,21 @@
 		369473B90FD5C3DC00A5E9FD /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF116D0EE9A7700054F513 /* MaxAudioAPI.framework */; };
 		369473C10FD5C3F900A5E9FD /* example~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36D4A7D80FD5A5A90086FA80 /* example~.cpp */; };
 		36D4A7D90FD5A5A90086FA80 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36D4A7D60FD5A5A90086FA80 /* example.cpp */; };
+		565B4D3A156BBF620061B72B /* gmu.grain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56645AFC1238DFBB000C6CA1 /* gmu.grain.cpp */; };
+		565B4D3B156BBF620061B72B /* gmu.spat.utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562E51ED1230004500AB8C5B /* gmu.spat.utils.cpp */; };
+		565B4D3C156BBF620061B72B /* gmu.spat.dbap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562E51E5122FAF0E00AB8C5B /* gmu.spat.dbap.cpp */; };
+		565B4D3D156BBF620061B72B /* gmu.env.trap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56645AE91237DE0C000C6CA1 /* gmu.env.trap.cpp */; };
+		565B4D3E156BBF620061B72B /* gmu.env.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 560547AD1237B6BD00F96D41 /* gmu.env.cpp */; };
+		565B4D3F156BBF620061B72B /* gmu.env.slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 560547B61237C7B600F96D41 /* gmu.env.slot.cpp */; };
+		565B4D40156BBF620061B72B /* gmu.env.shrbuf.manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56DA8B5C123A7A1F00B6C8F9 /* gmu.env.shrbuf.manager.cpp */; };
+		565B4D44156BBF620061B72B /* commonsyms.c in Sources */ = {isa = PBXBuildFile; fileRef = 22922AD20F38D67900B1EFEA /* commonsyms.c */; };
+		565B4D45156BBF620061B72B /* gmu.utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56F1C496138671F600EDEB34 /* gmu.utils.cpp */; };
+		565B4D46156BBF620061B72B /* gmu.spat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56A64A5B1403F244008C40C7 /* gmu.spat.cpp */; };
+		565B4D47156BBF620061B72B /* gmu.env.etrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 568B33581418C777001D7896 /* gmu.env.etrap.cpp */; };
+		565B4D49156BBF620061B72B /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54266BCE05E6E9780000000C /* MaxAPI.framework */; };
+		565B4D4A156BBF620061B72B /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF116D0EE9A7700054F513 /* MaxAudioAPI.framework */; };
+		565B4D52156BBFEA0061B72B /* gmu.delays~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 565B4D51156BBFEA0061B72B /* gmu.delays~.cpp */; };
+		565B4D56156BCAD70061B72B /* gmu.delays.tap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 565B4D55156BCAD70061B72B /* gmu.delays.tap.cpp */; };
 		568B33591418C778001D7896 /* gmu.env.etrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 568B33581418C777001D7896 /* gmu.env.etrap.cpp */; };
 		56A64A5C1403F244008C40C7 /* gmu.spat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56A64A5B1403F244008C40C7 /* gmu.spat.cpp */; };
 		56D1936E1348E1DE0024631A /* commonsyms.c in Sources */ = {isa = PBXBuildFile; fileRef = 22922AD20F38D67900B1EFEA /* commonsyms.c */; };
@@ -86,6 +101,12 @@
 		562E51E5122FAF0E00AB8C5B /* gmu.spat.dbap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gmu.spat.dbap.cpp; sourceTree = "<group>"; };
 		562E51EC1230004500AB8C5B /* gmu.spat.utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmu.spat.utils.h; sourceTree = "<group>"; };
 		562E51ED1230004500AB8C5B /* gmu.spat.utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gmu.spat.utils.cpp; sourceTree = "<group>"; };
+		565B4D4F156BBF620061B72B /* gmu.delays~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gmu.delays~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		565B4D50156BBF620061B72B /* gmu.bufgranul~ copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "gmu.bufgranul~ copy-Info.plist"; path = "/Users/charles/Documents/_GMEM/_dev/__max/GMU-projects/gmu.objects.*/src/gmu.bufgranul~ copy-Info.plist"; sourceTree = "<absolute>"; };
+		565B4D51156BBFEA0061B72B /* gmu.delays~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "gmu.delays~.cpp"; sourceTree = "<group>"; };
+		565B4D53156BC0060061B72B /* gmu.delays~.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gmu.delays~.h"; sourceTree = "<group>"; };
+		565B4D54156BCAB80061B72B /* gmu.delays.tap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gmu.delays.tap.h; sourceTree = "<group>"; };
+		565B4D55156BCAD70061B72B /* gmu.delays.tap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gmu.delays.tap.cpp; sourceTree = "<group>"; };
 		56645AE81237DE0C000C6CA1 /* gmu.env.trap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmu.env.trap.h; sourceTree = "<group>"; };
 		56645AE91237DE0C000C6CA1 /* gmu.env.trap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gmu.env.trap.cpp; sourceTree = "<group>"; };
 		56645AF91238DF92000C6CA1 /* gmu.bufgrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmu.bufgrain.h; sourceTree = "<group>"; };
@@ -129,6 +150,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		565B4D48156BBF620061B72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				565B4D49156BBF620061B72B /* MaxAPI.framework in Frameworks */,
+				565B4D4A156BBF620061B72B /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56D1936F1348E1DE0024631A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,6 +180,7 @@
 				08FB77ADFE841716C02AAC07 /* Source */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
 				19C28FB4FE9D528D11CA2CBB /* Products */,
+				565B4D50156BBF620061B72B /* gmu.bufgranul~ copy-Info.plist */,
 			);
 			name = iterator;
 			sourceTree = "<group>";
@@ -166,7 +197,8 @@
 		08FB77ADFE841716C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5693D7D31414110D00FEDBC2 /* New Group */,
+				5693D7D31414110D00FEDBC2 /* _old */,
+				565B4D36156BBBD50061B72B /* gmu.delays */,
 				56645AF61238DF54000C6CA1 /* gmu.bufgranul */,
 				56645AF51237E142000C6CA1 /* gmu.spat */,
 				56645AF41237E12C000C6CA1 /* gmu.env */,
@@ -186,6 +218,7 @@
 				2FBBEAE508F335360078DB84 /* example.mxo */,
 				369473BE0FD5C3DC00A5E9FD /* example~.mxo */,
 				56D193761348E1DE0024631A /* gmu.bufgranul~.mxo */,
+				565B4D4F156BBF620061B72B /* gmu.delays~.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +239,17 @@
 				36D4A7D80FD5A5A90086FA80 /* example~.cpp */,
 			);
 			name = example;
+			sourceTree = "<group>";
+		};
+		565B4D36156BBBD50061B72B /* gmu.delays */ = {
+			isa = PBXGroup;
+			children = (
+				565B4D51156BBFEA0061B72B /* gmu.delays~.cpp */,
+				565B4D53156BC0060061B72B /* gmu.delays~.h */,
+				565B4D55156BCAD70061B72B /* gmu.delays.tap.cpp */,
+				565B4D54156BCAB80061B72B /* gmu.delays.tap.h */,
+			);
+			name = gmu.delays;
 			sourceTree = "<group>";
 		};
 		56645AF41237E12C000C6CA1 /* gmu.env */ = {
@@ -253,14 +297,14 @@
 			name = gmu.bufgranul;
 			sourceTree = "<group>";
 		};
-		5693D7D31414110D00FEDBC2 /* New Group */ = {
+		5693D7D31414110D00FEDBC2 /* _old */ = {
 			isa = PBXGroup;
 			children = (
 				5693D7D41414114700FEDBC2 /* bufGranul2~_DSP.c */,
 				5693D7D51414114700FEDBC2 /* bufGranul2~.c */,
 				5693D7D61414114700FEDBC2 /* bufGranul2~.h */,
 			);
-			name = "New Group";
+			name = _old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +344,24 @@
 			name = "example~";
 			productName = iterator;
 			productReference = 369473BE0FD5C3DC00A5E9FD /* example~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		565B4D37156BBF620061B72B /* gmu.delays~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 565B4D4C156BBF620061B72B /* Build configuration list for PBXNativeTarget "gmu.delays~" */;
+			buildPhases = (
+				565B4D38156BBF620061B72B /* Resources */,
+				565B4D39156BBF620061B72B /* Sources */,
+				565B4D48156BBF620061B72B /* Frameworks */,
+				565B4D4B156BBF620061B72B /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gmu.delays~";
+			productName = iterator;
+			productReference = 565B4D4F156BBF620061B72B /* gmu.delays~.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 		56D1936A1348E1DE0024631A /* gmu.bufgranul~ */ = {
@@ -346,6 +408,7 @@
 				369473B20FD5C3DC00A5E9FD /* example~ */,
 				3694742E0FD5C8DC00A5E9FD /* All */,
 				56D1936A1348E1DE0024631A /* gmu.bufgranul~ */,
+				565B4D37156BBF620061B72B /* gmu.delays~ */,
 			);
 		};
 /* End PBXProject section */
@@ -359,6 +422,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		369473B30FD5C3DC00A5E9FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		565B4D38156BBF620061B72B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +453,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		369473BA0FD5C3DC00A5E9FD /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		565B4D4B156BBF620061B72B /* Rez */ = {
 			isa = PBXRezBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,6 +491,26 @@
 			files = (
 				369473C10FD5C3F900A5E9FD /* example~.cpp in Sources */,
 				369473B50FD5C3DC00A5E9FD /* commonsyms.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		565B4D39156BBF620061B72B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				565B4D3A156BBF620061B72B /* gmu.grain.cpp in Sources */,
+				565B4D3B156BBF620061B72B /* gmu.spat.utils.cpp in Sources */,
+				565B4D3C156BBF620061B72B /* gmu.spat.dbap.cpp in Sources */,
+				565B4D3D156BBF620061B72B /* gmu.env.trap.cpp in Sources */,
+				565B4D3E156BBF620061B72B /* gmu.env.cpp in Sources */,
+				565B4D3F156BBF620061B72B /* gmu.env.slot.cpp in Sources */,
+				565B4D40156BBF620061B72B /* gmu.env.shrbuf.manager.cpp in Sources */,
+				565B4D44156BBF620061B72B /* commonsyms.c in Sources */,
+				565B4D45156BBF620061B72B /* gmu.utils.cpp in Sources */,
+				565B4D46156BBF620061B72B /* gmu.spat.cpp in Sources */,
+				565B4D47156BBF620061B72B /* gmu.env.etrap.cpp in Sources */,
+				565B4D52156BBFEA0061B72B /* gmu.delays~.cpp in Sources */,
+				565B4D56156BCAD70061B72B /* gmu.delays.tap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +661,59 @@
 			};
 			name = Deployment;
 		};
+		565B4D4D156BBF620061B72B /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CF10220EE984600054F513 /* maxmspsdk.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = "$(SRCROOT)/../sdk-build";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\"$(SRCROOT)/../../c74support/msp-includes\\\\\\\"",
+				);
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "gmu.bufgranul~ copy-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "gmu.delays~";
+				SDKROOT = macosx;
+				"SDKROOT[arch=i386]" = macosx10.6;
+				"SDKROOT[arch=ppc]" = macosx10.6;
+			};
+			name = Development;
+		};
+		565B4D4E156BBF620061B72B /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CF10220EE984600054F513 /* maxmspsdk.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = "$(SRCROOT)/../sdk-build";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\\\\\"$(SRCROOT)/../../c74support/msp-includes\\\\\\\"",
+				);
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "gmu.bufgranul~ copy-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "gmu.delays~";
+				SDKROOT = macosx;
+				"SDKROOT[arch=i386]" = macosx10.6;
+				"SDKROOT[arch=ppc]" = macosx10.6;
+			};
+			name = Deployment;
+		};
 		56D193741348E1DE0024631A /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22CF10220EE984600054F513 /* maxmspsdk.xcconfig */;
@@ -652,6 +802,15 @@
 			buildConfigurations = (
 				3694742F0FD5C8DD00A5E9FD /* Development */,
 				369474300FD5C8DD00A5E9FD /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		565B4D4C156BBF620061B72B /* Build configuration list for PBXNativeTarget "gmu.delays~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				565B4D4D156BBF620061B72B /* Development */,
+				565B4D4E156BBF620061B72B /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;

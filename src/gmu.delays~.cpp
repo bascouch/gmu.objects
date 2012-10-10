@@ -1,26 +1,26 @@
-/*
- *  gmu.bufgranul~.cpp
- *  gmu.objects
- *
- *  Created by charles on 09/09/10.
- *  Copyright 2010 GMEM. All rights reserved.
- *
- */
+//
+//  gmu.delays~.cpp
+//  gmu.objects
+//
+//  Created by charles bascou on 22/05/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
 
-#include "gmu.bufgranul~.h"
+
+#include "gmu.delays~.h"
 
 
 /******** ******** ******** ********
-			THE CLASS
+ THE CLASS
  ******** ******** ******** ********/
 
 
-class gmu_bufgranul : public MspCpp5<gmu_bufgranul> 
+class gmu_delays : public MspCpp5<gmu_delays> 
 {
 	public :
 	
-
-	gmu_bufgranul(t_symbol * sym, long ac, t_atom * av)
+    
+	gmu_delays(t_symbol * sym, long ac, t_atom * av)
 	{
 		int symcount = 0;
 		float f;
@@ -72,28 +72,28 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 				case A_LONG:		// num speakers
 					nspeakers= SAT(av[j].a_w.w_long,1,MAX_NUM_SPEAKERS);
 					gotnum = true;
-                    post("bufgranul~ : nouts %d",nspeakers);
+                    post("delays~ : nouts %d",nspeakers);
 					break;
 					
 				case A_SYM:
 					if(gotnum)		// spat type
 					{
 						spatsym = av[j].a_w.w_sym;
-                        post("bufgranul~ : spat %s",spatsym->s_name);
+                        post("delays~ : spat %s",spatsym->s_name);
 					}
 					else
-					if(symcount==1) //	env buffer // TODO: make possible choice of algos
-					{
-						envsym = av[j].a_w.w_sym;
-						symcount++;
-                        post("bufgranul~ : env %s",envsym->s_name);
-						
-					}else			//	buffer
-					{						
-						bufsym = av[j].a_w.w_sym;
-						symcount++;
-                        post("bufgranul~ : sound %s",bufsym->s_name);
-					}
+                        if(symcount==1) //	env buffer // TODO: make possible choice of algos
+                        {
+                            envsym = av[j].a_w.w_sym;
+                            symcount++;
+                            post("delays~ : env %s",envsym->s_name);
+                            
+                        }else			//	buffer
+                        {						
+                            bufsym = av[j].a_w.w_sym;
+                            symcount++;
+                            post("delays~ : sound %s",bufsym->s_name);
+                        }
                     
 					break;
 					
@@ -105,19 +105,19 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 		
         
         // DSP init
-		setupIO(&gmu_bufgranul::perform, 0, nspeakers);
+		setupIO(&gmu_delays::perform, 0, nspeakers);
         
 		// SPAT ASSIGN
 		if(spatsym)
 		{
 			if(!strcmp(spatsym->s_name,"dbap"))
-			   spat_class = new gmu_spat_dbap(nspeakers);
+                spat_class = new gmu_spat_dbap(nspeakers);
 			else
-			   spat_class = new gmu_spat_dbap(nspeakers);
+                spat_class = new gmu_spat_dbap(nspeakers);
 		}
 		else
 			spat_class = new gmu_spat_dbap(nspeakers);
-			
+        
 		// ENV BUFFER MANAGER
 		env_shrbuf_manager = new gmu_env_shrbuf_manager();
 		// ENV ASSIGN
@@ -152,9 +152,9 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
                 gmu_buffer::valid_buffer = default_buffer;
             }
             else
-                error("bufgranul~ : default sound buffer is not valid");
+                error("delays~ : default sound buffer is not valid");
 		}
-
+        
         // TEMP BUFFER ALLOC for GRAINS
         gmu_bufgrain::tmp_buffer = (float *) sysmem_newptr(8192 * sizeof(float));
         
@@ -165,7 +165,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 	
 	// DESTRUCTOR
 	
-	~gmu_bufgranul()
+	~gmu_delays()
 	{
 		
 		sysmem_freeptr(linear_interp_table);
@@ -181,7 +181,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 	void perform(int vs, t_sample ** inputs, t_sample ** outputs) 
 	{
         int res;
-    
+        
         critical_enter(0);
         
         nvoices_active = grain_pool.size();
@@ -189,7 +189,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         // zeros the outputs
         for(int i = 0; i < nspeakers; i++)
             memset(outputs[i], 0, vs * sizeof(float));
-          
+        
         // check the buffers
         if(perform_check_buffers() == 0)
         {
@@ -224,13 +224,13 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         
 		if(ac < 9)
 		{	
-			post("bufgranul~ : grain args are <delay(ms)> <begin> <detune> <amp> <length> <x> <y> <buffer> <envbuffer>");
+			post("delays~ : grain args are <delay(ms)> <begin> <detune> <amp> <length> <x> <y> <buffer> <envbuffer>");
 			return;
 		}
 		
 		if( nvoices_active >= NVOICES )
 		{
-			post("bufgranul~ : too much active grains.");
+			post("delays~ : too much active grains.");
 			return;
 		}
         
@@ -284,7 +284,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
                 g->buffer = default_buffer;    
             
             g->buffer->used ++;
-
+            
         }else
         {
             if(buffer < 0 || buffer > MAX_BUF_SLOTS)
@@ -296,12 +296,12 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         }
         
 		g->env = env_slots[envbuffer]->instanciate();
-		        
+        
 		g->length = fabs(length) * conf.srms;
         g->i_index = 0;
         g->i_remain_index = (long)g->length;
 		g->env->init(length,conf.srms);
-
+        
 		g->position.x = x;
         g->position.y = y;
         
@@ -335,7 +335,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
     {
         if(ac < 1)
         {
-            post("gmu.bufgranul~ : env needs args");
+            post("gmu.delays~ : env needs args");
             return;
         }
         int slotnum = 0;
@@ -344,14 +344,14 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         if (av[0].a_type == A_LONG){
             if(ac < 2)
             {
-                post("gmu.bufgranul~ : env needs envtype after slot number");
+                post("gmu.delays~ : env needs envtype after slot number");
                 return;
             }
             slotnum = (int)atom2float(av, 0);
             
             if(slotnum < 0 || slotnum >= MAX_ENV_SLOTS)
             {
-                post("gmu.bufgranul~ : env slot number out of range");
+                post("gmu.delays~ : env slot number out of range");
                 return;
             }
             
@@ -365,10 +365,10 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         }
         else
         {
-            post("gmu.bufgranul~ : env bad syntax");
+            post("gmu.delays~ : env bad syntax");
             return;
         }
-            
+        
     }
     
     void buffer(long inlet, t_symbol *s, long ac, t_atom *av)
@@ -378,7 +378,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         
         if(ac < 1)
         {
-            post("gmu.bufgranul~ : buffer needs args");
+            post("gmu.delays~ : buffer needs args");
             return;
         }
         int slotnum = 0;
@@ -387,14 +387,14 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
         if (av[0].a_type == A_LONG){
             if(ac < 2)
             {
-                post("gmu.bufgranul~ : buffer needs buffer_name after slot number");
+                post("gmu.delays~ : buffer needs buffer_name after slot number");
                 return;
             }
             slotnum = (int)atom2float(av, 0);
             
             if(slotnum < 0 || slotnum >= MAX_BUF_SLOTS)
             {
-                post("gmu.bufgranul~ : buffer slot number out of range");
+                post("gmu.delays~ : buffer slot number out of range");
                 return;
             }
             
@@ -417,17 +417,17 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
                     default_buffer = tbuf;
                     gmu_buffer::valid_buffer = default_buffer;
                 }
-                 critical_exit(0);
+                critical_exit(0);
             }
             else
-                error("bufgranul~ : buffer %s is not valid", bname->s_name);
+                error("delays~ : buffer %s is not valid", bname->s_name);
         }
         else
         {
-            post("gmu.bufgranul~ : buffer bad syntax");
+            post("gmu.delays~ : buffer bad syntax");
             return;
         }
-
+        
     }
     
     void clear(long inlet)
@@ -444,7 +444,7 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
     
     void infos(long inlet)
     {
-        post("gmu.bufgranul~ : %d active grains",nvoices_active);
+        post("gmu.delays~ : %d active grains",nvoices_active);
     }
     
     int perform_check_buffers()
@@ -490,16 +490,16 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 	
 	// env_slots
 	int active_env;											// active env index
-	gmu_env_slot * env_slots[MAX_ENV_SLOTS];					// env slots
+	gmu_env_slot * env_slots[MAX_ENV_SLOTS];				// env slots
 	gmu_env_shrbuf_manager * env_shrbuf_manager;			// shrbuf manager
 	
 	// active grains vector
-	vector<gmu_bufgrain*> grain_pool;							// THE GRAINS VECTOR
+	vector<gmu_bufgrain*> grain_pool;						// THE GRAINS VECTOR
 	vector<gmu_bufgrain*>::iterator grains_it;				// iterator for grain vector
     
 	// spat
-	gmu_spat * spat_class;										// the spat class
-
+	gmu_spat * spat_class;									// the spat class
+    
 	// interp table
     t_linear_interp * linear_interp_table;
     
@@ -511,16 +511,16 @@ class gmu_bufgranul : public MspCpp5<gmu_bufgranul>
 
 extern "C" int main(void) {
 	// create a class with the given name:
-	gmu_bufgranul::makeMaxClass("gmu.bufgranul~");
-	//REGISTER_METHOD(gmu_bufgranul, bang);
-	REGISTER_METHOD_GIMME(gmu_bufgranul, grain);
-    REGISTER_METHOD_GIMME(gmu_bufgranul, spat);
-    REGISTER_METHOD_GIMME(gmu_bufgranul, env);
-    REGISTER_METHOD_GIMME(gmu_bufgranul, buffer);
-    REGISTER_METHOD(gmu_bufgranul, clear);
-    REGISTER_METHOD(gmu_bufgranul, infos);
+	gmu_delays::makeMaxClass("gmu.delays~");
+	//REGISTER_METHOD(gmu_delays, bang);
+	REGISTER_METHOD_GIMME(gmu_delays, grain);
+    REGISTER_METHOD_GIMME(gmu_delays, spat);
+    REGISTER_METHOD_GIMME(gmu_delays, env);
+    REGISTER_METHOD_GIMME(gmu_delays, buffer);
+    REGISTER_METHOD(gmu_delays, clear);
+    REGISTER_METHOD(gmu_delays, infos);
     
-    post("Copyright © 2011 gmu.bufgranul~ v3.0 RifRaf GMEM Marseille F") ;
+    post("Copyright © 2011 gmu.delays~ v3.0 RifRaf GMEM Marseille F") ;
 	post("build %s %s",__DATE__,__TIME__);
 }
 

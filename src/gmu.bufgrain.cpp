@@ -50,6 +50,9 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
     
     float val;
     
+    float * local_samples;
+    int local_chans;
+    
     if(i_delay >= frames)
     {
         i_delay -= frames;
@@ -117,6 +120,9 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
 //    post(" i %i %i %i",dsp_i_begin,dsp_i_end,nech_process_sat);
 //    post(" sl %i ",buffer->frames);
     
+    local_samples = buffer->samples;
+    local_chans = buffer->chans;
+    
     /// //// ///
     // boucle de lecture du buffer
     for(i= dsp_i_begin; i < dsp_i_end; i++)
@@ -125,8 +131,8 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
         // Lecture de la forme d'onde
         buffer_index = base_lindex + interp_get_int( lindex );
         interp_table_index = interp_get_table_index( lindex );
-        val = interp_table[interp_table_index].a * buffer->samples[buffer_index * buffer->chans] 
-        + interp_table[interp_table_index].b * buffer->samples[(buffer_index + 1) * buffer->chans];
+        val = interp_table[interp_table_index].a * local_samples[buffer_index * local_chans] 
+        + interp_table[interp_table_index].b * local_samples[(buffer_index + 1) * local_chans];
         
         lindex += lincr;
         
@@ -143,11 +149,30 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
     
     // apply spat
     
-    for(i= dsp_i_begin; i < dsp_i_end; i++)
+//    for(i= dsp_i_begin; i < dsp_i_end; i++)
+//    {
+//        for (j = 0; j < spat->num_speakers; j++)
+//            out_buffer[j][i] += tmp_buffer[i] * hp_gains[j];
+//    }
+    
+    float * out_p, * tmp_p, gain;
+    int k;
+    
+    for (j = 0; j < spat->num_speakers; j++)
     {
-        for (j = 0; j < spat->num_speakers; j++)
-            out_buffer[j][i] += tmp_buffer[i] * hp_gains[j];
+        out_p = out_buffer[j] + dsp_i_begin;
+        tmp_p = tmp_buffer + dsp_i_begin;
+        k = nech_process_sat;
+        gain = hp_gains[j];
+        while (k--)
+        {
+            (*out_p) += *tmp_p * gain;
+            out_p ++;
+            tmp_p ++;
+        }
     }
+    
+    
     
 end: 
     
