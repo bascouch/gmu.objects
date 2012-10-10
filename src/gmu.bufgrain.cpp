@@ -51,6 +51,8 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
     float val;
     
     float * local_samples;
+    float * local_buffer;
+    
     int local_chans;
     
     if(i_delay >= frames)
@@ -122,12 +124,12 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
     
     local_samples = buffer->samples;
     local_chans = buffer->chans;
+    local_buffer = tmp_buffer+dsp_i_begin;
     
     /// //// ///
     // boucle de lecture du buffer
     for(i= dsp_i_begin; i < dsp_i_end; i++)
     {
-        
         // Lecture de la forme d'onde
         buffer_index = base_lindex + interp_get_int( lindex );
         interp_table_index = interp_get_table_index( lindex );
@@ -137,7 +139,7 @@ int gmu_bufgrain::compute(float ** out_buffer, int frames)
         lindex += lincr;
         
         // stockage temporaire
-        tmp_buffer[i] = val;
+        *local_buffer++ = val;
         
     }
 
