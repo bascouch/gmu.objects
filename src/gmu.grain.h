@@ -25,7 +25,6 @@ class gmu_grain {
 	// generate portion of the grain into buffer
 	virtual int compute(float ** buffer, int frames) = 0;
 	
-	
 	// grains common parameters
 	float amp;
 	float length;
